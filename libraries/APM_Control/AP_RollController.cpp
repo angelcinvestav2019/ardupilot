@@ -114,7 +114,7 @@ int32_t AP_RollController::_get_rate_out(float desired_rate, float scaler, bool 
     }
 	
     // Get body rate vector (radians/sec)
-	float omega_x = _ahrs.get_gyro().x;
+	float omega_x =-(float)(_ahrs.get_gyro().x);
 	
 	// Calculate the roll rate error (deg/sec) and apply gain scaler
     float achieved_rate = ToDeg(omega_x);
